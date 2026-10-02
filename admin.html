@@ -118,7 +118,59 @@ function login() {
 
   if (username === "admin" && password === "1234") {
 
-    document.querySelector(".container").innerHTML = `
+ document.querySelector(".container").innerHTML = `
+
+  <div class="card">
+
+    <h2>⚙️ Admin Dashboard</h2>
+
+    <p style="margin-top:10px;">
+      மக்கள் பார்வை — நிர்வாக கட்டுப்பாடு
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h3>🛕 கோவில் நிர்வாகம்</h3>
+
+    <button onclick="location.href='temples.html'">
+      கோவில்களை பார்க்க
+    </button>
+
+  </div>
+
+  <div class="card">
+
+    <h3>👥 நிதி வழங்கியவர்கள்</h3>
+
+    <button onclick="location.href='contributors.html'">
+      நிதி பதிவுகளை பார்க்க
+    </button>
+
+  </div>
+
+  <div class="card">
+
+    <h3>💸 செலவு நிர்வாகம்</h3>
+
+    <button onclick="location.href='expenses.html'">
+      செலவு பதிவுகளை பார்க்க
+    </button>
+
+  </div>
+
+  <div class="card">
+
+    <h3>📊 Dashboard</h3>
+
+    <button onclick="location.href='index.html'">
+      முகப்பு Dashboard
+    </button>
+
+  </div>
+
+`;  `
 
       <div class="card">
 
