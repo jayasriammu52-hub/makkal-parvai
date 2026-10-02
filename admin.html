@@ -118,7 +118,33 @@ function login() {
 
   if (username === "admin" && password === "1234") {
 
-    alert("Login successful!");
+    document.querySelector(".container").innerHTML = `
+
+      <div class="card">
+
+        <h2>⚙️ Admin Dashboard</h2>
+
+        <br>
+
+        <button onclick="location.href='temples.html'">
+          🛕 கோவில்கள்
+        </button>
+
+        <button onclick="location.href='contributors.html'">
+          👥 நிதி வழங்கியவர்கள்
+        </button>
+
+        <button onclick="location.href='expenses.html'">
+          💸 செலவுகள்
+        </button>
+
+        <button onclick="location.href='index.html'">
+          🏠 முகப்பு
+        </button>
+
+      </div>
+
+    `;
 
   } else {
 
