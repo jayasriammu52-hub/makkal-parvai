@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>கோவில்கள் - மக்கள் பார்வை</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #172554;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    header h1 {
+      margin-bottom: 8px;
+    }
+
+    nav {
+      background: white;
+      padding: 14px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      color: #172554;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .add-btn {
+      background: #172554;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .temple-card {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .temple-card h2 {
+      margin-bottom: 12px;
+    }
+
+    .temple-card p {
+      margin: 8px 0;
+    }
+
+    .balance {
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .top {
+        display: block;
+      }
+
+      .add-btn {
+        margin-top: 15px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>மக்கள் பார்வை</h1>
+  <p>பின்னவரம்</p>
+</header>
+
+<nav>
+  <a href="index.html">முகப்பு</a>
+  <a href="temples.html">🛕 கோவில்கள்</a>
+</nav>
+
+<div class="container">
+
+  <div class="top">
+    <div>
+      <h2>🛕 கோவில்கள்</h2>
+      <p>கோவில் வாரியான நிதி விவரங்கள்</p>
+    </div>
+
+    <button class="add-btn">
+      ➕ கோவில் சேர்க்க
+    </button>
+  </div>
+
+  <div class="temple-card">
+
+    <h2>கோவில் பெயர்</h2>
+
+    <p>📍 ஊர்: —</p>
+
+    <p>👤 பொறுப்பாளர்: —</p>
+
+    <p>💰 பெறப்பட்ட நிதி: ₹0</p>
+
+    <p>💸 செலவு: ₹0</p>
+
+    <p class="balance">🟢 மீதம்: ₹0</p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
