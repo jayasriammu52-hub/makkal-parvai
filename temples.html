@@ -204,7 +204,27 @@ function addTemple() {
     return;
   }
 
-  alert("கோவில் தகவல் பெறப்பட்டது: " + name);
+  const templeCard = document.createElement("div");
+
+  templeCard.className = "temple-card";
+
+  templeCard.innerHTML = `
+    <h2>🛕 ${name}</h2>
+    <p>📍 ஊர்: ${location}</p>
+    <p>👤 பொறுப்பாளர்: ${person}</p>
+    <p>💰 பெறப்பட்ட நிதி: ₹${received}</p>
+    <p>💸 செலவு: ₹0</p>
+    <p class="balance">🟢 மீதம்: ₹${received}</p>
+  `;
+
+  document.querySelector(".container").appendChild(templeCard);
+
+  document.getElementById("templeForm").style.display = "none";
+
+  document.getElementById("templeName").value = "";
+  document.getElementById("location").value = "";
+  document.getElementById("person").value = "";
+  document.getElementById("received").value = "";
 
 }
 
