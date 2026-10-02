@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Panel - மக்கள் பார்வை</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #172554;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 10px;
+      background: #172554;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #172554;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>மக்கள் பார்வை</h1>
+  <p>Admin Panel</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+
+    <h2>🔐 Admin Login</h2>
+
+    <br>
+
+    <input
+      id="username"
+      type="text"
+      placeholder="Username">
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Password">
+
+    <button onclick="login()">
+      Login
+    </button>
+
+    <a href="index.html" class="back">
+      ← முகப்புக்கு செல்ல
+    </a>
+
+  </div>
+
+</div>
+
+<script>
+
+function login() {
+
+  const username =
+    document.getElementById("username").value;
+
+  const password =
+    document.getElementById("password").value;
+
+  if (username === "admin" && password === "1234") {
+
+    alert("Login successful!");
+
+  } else {
+
+    alert("Username அல்லது Password தவறு");
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
