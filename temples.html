@@ -202,12 +202,58 @@ function addTemple() {
   const name = document.getElementById("templeName").value;
   const location = document.getElementById("location").value;
   const person = document.getElementById("person").value;
-  const received = document.getElementById("received").value;
+
+  const received = Number(
+    document.getElementById("received").value
+  );
+
+  const spent = Number(
+    document.getElementById("spent").value
+  );
 
   if (!name || !location || !person || !received) {
     alert("அனைத்து விவரங்களையும் நிரப்பவும்");
     return;
   }
+
+  if (spent > received) {
+    alert("செலவு தொகை, பெறப்பட்ட தொகையை விட அதிகமாக இருக்கக்கூடாது");
+    return;
+  }
+
+  const balance = received - spent;
+
+  const templeCard = document.createElement("div");
+
+  templeCard.className = "temple-card";
+
+  templeCard.innerHTML = `
+    <h2>🛕 ${name}</h2>
+
+    <p>📍 ஊர்: ${location}</p>
+
+    <p>👤 பொறுப்பாளர்: ${person}</p>
+
+    <p>💰 பெறப்பட்ட நிதி: ₹${received.toLocaleString("en-IN")}</p>
+
+    <p>💸 செலவு: ₹${spent.toLocaleString("en-IN")}</p>
+
+    <p class="balance">
+      🟢 மீதம்: ₹${balance.toLocaleString("en-IN")}
+    </p>
+  `;
+
+  document.querySelector(".container").appendChild(templeCard);
+
+  document.getElementById("templeForm").style.display = "none";
+
+  document.getElementById("templeName").value = "";
+  document.getElementById("location").value = "";
+  document.getElementById("person").value = "";
+  document.getElementById("received").value = "";
+  document.getElementById("spent").value = "";
+
+}
 
   const templeCard = document.createElement("div");
 
