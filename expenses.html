@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>செலவுகள் - மக்கள் பார்வை</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #172554;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    nav {
+      background: white;
+      padding: 14px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      color: #172554;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 12px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .card p {
+      margin: 8px 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #172554;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>மக்கள் பார்வை</h1>
+  <p>பின்னவரம்</p>
+</header>
+
+<nav>
+  <a href="index.html">முகப்பு</a>
+  <a href="temples.html">🛕 கோவில்கள்</a>
+  <a href="contributors.html">👥 நிதி வழங்கியவர்கள்</a>
+  <a href="expenses.html">💸 செலவுகள்</a>
+</nav>
+
+<div class="container">
+
+  <div class="card">
+    <h2>💸 செலவுகள்</h2>
+    <p>பணம் எதற்காக செலவு செய்யப்பட்டது என்பதை இங்கே பதிவு செய்யலாம்.</p>
+  </div>
+
+  <div class="card">
+
+    <h2>➕ புதிய செலவு பதிவு</h2>
+
+    <br>
+
+    <input id="expenseTemple"
+      type="text"
+      placeholder="கோவில் பெயர்">
+
+    <input id="expenseAmount"
+      type="number"
+      placeholder="செலவு தொகை">
+
+    <input id="expensePurpose"
+      type="text"
+      placeholder="செலவு காரணம்">
+
+    <input id="expenseDate"
+      type="date">
+
+    <input id="expensePerson"
+      type="text"
+      placeholder="பொறுப்பாளர் பெயர்">
+
+    <button onclick="addExpense()">
+      சேமிக்க
+    </button>
+
+  </div>
+
+  <div id="expensesList"></div>
+
+</div>
+
+<script>
+
+function addExpense() {
+
+  const temple =
+    document.getElementById("expenseTemple").value;
+
+  const amount =
+    Number(document.getElementById("expenseAmount").value);
+
+  const purpose =
+    document.getElementById("expensePurpose").value;
+
+  const date =
+    document.getElementById("expenseDate").value;
+
+  const person =
+    document.getElementById("expensePerson").value;
+
+  if (!temple || !amount || !purpose || !date || !person) {
+    alert("அனைத்து விவரங்களையும் நிரப்பவும்");
+    return;
+  }
+
+  const card = document.createElement("div");
+
+  card.className = "card";
+
+  card.innerHTML = `
+    <h2>💸 ${temple}</h2>
+
+    <p>💰 செலவு தொகை: ₹${amount.toLocaleString("en-IN")}</p>
+
+    <p>📌 காரணம்: ${purpose}</p>
+
+    <p>📅 தேதி: ${date}</p>
+
+    <p>👤 பொறுப்பாளர்: ${person}</p>
+  `;
+
+  document
+    .getElementById("expensesList")
+    .appendChild(card);
+
+  document.getElementById("expenseTemple").value = "";
+  document.getElementById("expenseAmount").value = "";
+  document.getElementById("expensePurpose").value = "";
+  document.getElementById("expenseDate").value = "";
+  document.getElementById("expensePerson").value = "";
+
+}
+
+</script>
+
+</body>
+</html>
