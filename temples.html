@@ -147,6 +147,67 @@
   </div>
 
 </div>
+<div id="templeForm" style="
+  display:none;
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  margin-bottom:20px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.08);
+">
 
+  <h2>➕ புதிய கோவில் சேர்க்க</h2>
+
+  <br>
+
+  <input id="templeName"
+    type="text"
+    placeholder="கோவில் பெயர்"
+    style="width:100%;padding:12px;margin-bottom:10px;">
+
+  <input id="location"
+    type="text"
+    placeholder="ஊர் / இடம்"
+    style="width:100%;padding:12px;margin-bottom:10px;">
+
+  <input id="person"
+    type="text"
+    placeholder="பொறுப்பாளர் பெயர்"
+    style="width:100%;padding:12px;margin-bottom:10px;">
+
+  <input id="received"
+    type="number"
+    placeholder="பெறப்பட்ட தொகை"
+    style="width:100%;padding:12px;margin-bottom:10px;">
+
+  <button onclick="addTemple()" class="add-btn">
+    சேமிக்க
+  </button>
+
+</div>
+
+<script>
+
+function showForm() {
+  document.getElementById("templeForm").style.display = "block";
+}
+
+function addTemple() {
+
+  const name = document.getElementById("templeName").value;
+  const location = document.getElementById("location").value;
+  const person = document.getElementById("person").value;
+  const received = document.getElementById("received").value;
+
+  if (!name || !location || !person || !received) {
+    alert("அனைத்து விவரங்களையும் நிரப்பவும்");
+    return;
+  }
+
+  alert("கோவில் தகவல் பெறப்பட்டது: " + name);
+
+}
+
+</script>
 </body>
 </html>
