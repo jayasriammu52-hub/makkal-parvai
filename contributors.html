@@ -80,7 +80,87 @@
     <p>யார் எவ்வளவு நிதி வழங்கினார்கள் என்பதை இங்கே பார்க்கலாம்.</p>
   </div>
 
+  <div class="card">
+
+    <h2>➕ நிதி பதிவு செய்ய</h2>
+
+    <br>
+
+    <input id="donorName"
+      type="text"
+      placeholder="பெயர்"
+      style="width:100%;padding:12px;margin-bottom:10px;">
+
+    <input id="amount"
+      type="number"
+      placeholder="வழங்கிய தொகை"
+      style="width:100%;padding:12px;margin-bottom:10px;">
+
+    <input id="purpose"
+      type="text"
+      placeholder="எதற்காக வழங்கப்பட்டது?"
+      style="width:100%;padding:12px;margin-bottom:10px;">
+
+    <input id="donationDate"
+      type="date"
+      style="width:100%;padding:12px;margin-bottom:10px;">
+
+    <button onclick="addContributor()"
+      style="
+        background:#172554;
+        color:white;
+        border:none;
+        padding:12px 18px;
+        border-radius:8px;
+        cursor:pointer;
+      ">
+      சேமிக்க
+    </button>
+
+  </div>
+
+<div id="contributorsList"></div>
+
 </div>
+
+<script>
+
+function addContributor() {
+
+  const name = document.getElementById("donorName").value;
+  const amount = Number(document.getElementById("amount").value);
+  const purpose = document.getElementById("purpose").value;
+  const date = document.getElementById("donationDate").value;
+
+  if (!name || !amount || !purpose || !date) {
+    alert("அனைத்து விவரங்களையும் நிரப்பவும்");
+    return;
+  }
+
+  const card = document.createElement("div");
+
+  card.className = "card";
+
+  card.innerHTML = `
+    <h2>👤 ${name}</h2>
+
+    <p>💰 வழங்கிய தொகை: ₹${amount.toLocaleString("en-IN")}</p>
+
+    <p>📌 காரணம்: ${purpose}</p>
+
+    <p>📅 தேதி: ${date}</p>
+  `;
+
+  document.getElementById("contributorsList").appendChild(card);
+
+  document.getElementById("donorName").value = "";
+  document.getElementById("amount").value = "";
+  document.getElementById("purpose").value = "";
+  document.getElementById("donationDate").value = "";
+
+}
+
+</script>
 
 </body>
 </html>
